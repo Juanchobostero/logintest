@@ -1,0 +1,515 @@
+/* base */
+:root {
+    --primary-color: #031929;
+    --secondary-color: #e37222;
+    --extra-color: #e8e7e7;
+  }
+  
+  /* General Styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  *:focus {
+    outline: 0;
+  }
+  
+  html {
+    width: 100%;
+    height: 100%;
+  }
+  
+  body {
+    font-family: 'Hind', sans-serif;
+    width: 100%;
+    font-size: 17px;
+    min-height: 100vh;
+  }
+  
+  
+  
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+  
+  img{
+    image-orientation: from-image !important;
+  }
+
+  .contenedor {
+      background-color: #ffff;
+      height: 100vh;
+      color: var(--primary-color);
+      display: grid;
+      grid-column: 1 / -1;
+      justify-content: center;
+      padding: 0.5rem;
+      margin: 0;
+      gap: 1rem;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 40vh);
+      grid-template-areas: "header"
+                           "content"
+                           "footer";
+  }
+
+  .header {
+      grid-area: header;
+      display: flex;
+      width: 100%;
+      height: 15vh;
+      background-color: var(--extra-color);
+      
+  }
+
+  .content {
+    grid-area: content;
+    display: block;
+    width: 100%;
+    height: 65vh;
+    padding: 2rem 2.5rem;
+    
+  }
+
+  .footer {
+    grid-area: footer;
+    display: block;
+    width: 100%;
+    height: 20vh;
+    background-color: var(--extra-color);
+  }
+
+  .title, .info-user {
+    display: inline;
+    width: 50%;
+    padding: 0.7rem;
+  }
+
+  .info-user {
+      text-align: right;
+  }
+
+  .form-login {
+      
+      min-width: 200px;
+      height: 100%;
+      background-color: var(--extra-color);
+      margin: 0 2.9rem;
+      padding: 1rem;
+  }
+
+  .form {
+      height: 100%;
+      justify-content: center;
+      align-content: center;
+      text-align: center;
+  }
+
+  input {
+      margin: 0.5rem 2rem;
+  }
+
+  
+  
+  input {
+    width: 18rem;
+    height: 3rem;
+    background-color: #ffff;
+    padding-left: 0.6rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    border: 0.059rem solid var(--extra-color);
+  }
+
+  .name {
+    width: 18rem;
+    height: 3rem;
+    background-color: #ffff;
+    padding-left: 0.6rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    border: 0.059rem solid var(--extra-color);
+  }
+
+  .error {
+    color: #990000;
+}
+
+  small {
+    font-size: 1rem;
+    display: flex;
+    opacity: 1;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-self: center;
+  }
+
+  small.error {
+    font-size: 1rem;
+    display: flex;
+    opacity: 1;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-self: center;
+    color:red;
+  }
+  
+  .password {
+    width: 18rem;
+    height: 2.7rem;
+    background-color: #ffff;
+    padding-left: 0.6rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    border: 0.059rem solid var(--extra-color);
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem auto;
+}
+
+.btn-login {
+    background-color: rgb(2, 63, 175);
+    width: 11rem;
+    height: 2rem;
+    color: white;
+    border-radius: 0.3rem;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+.btn-login:hover,
+.btn-register:hover {
+    filter: opacity(.4);
+    text-decoration: none;
+    color: white;
+}
+
+.btn-login,
+.btn-login:after,
+.btn-login:before {
+    transition: all .5s;
+}
+
+.btn-register,
+.btn-register:after,
+.btn-register:before {
+    transition: all .5s;
+}
+
+.alert-error {
+  font-size: 1rem;
+  display: flex;
+  opacity: 1;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  align-self: center;
+  color:red;
+}
+
+.alert-success {
+  font-size: 1rem;
+  display: flex;
+  opacity: 1;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  align-self: center;
+  color:rgb(0, 133, 66);
+}
+
+.error-form {
+  border: solid 0.1rem red;
+  background-color: rgb(194, 88, 88);
+  width: 22rem;
+  margin: 1rem 2rem;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.users {
+  height: 90%;
+  overflow: auto;
+  margin-top: 0.5rem;
+}
+
+.users-wrap{
+    min-width: 200px;
+    height: 100%;
+    background-color: var(--extra-color);
+    margin: 0 2.9rem;
+    padding: 3rem 2rem;
+}
+
+.users h3 {
+  padding: 0.5rem;
+}
+
+.logout {
+  background-color: var(--secondary-color);
+  width: 5rem;
+  height: 2rem;
+  color: white;
+  border-radius: 0.3rem;
+  border: none;
+  text-decoration: none;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.logout:hover, 
+.update:hover,
+.delete:hover {
+  opacity: 0.5;
+}
+
+.update {
+  background-color: rgb(221, 188, 0);
+  width: 5rem;
+  height: 2rem;
+  color: white;
+  border-radius: 0.3rem;
+  border: none;
+  text-decoration: none;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.delete {
+  background-color: rgb(177, 0, 24);
+  width: 5rem;
+  height: 2rem;
+  color: white;
+  border-radius: 0.3rem;
+  border: none;
+  text-decoration: none;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.info-user h4 {
+  font-size: 1.4rem;
+  color: rgb(68, 63, 63);
+}
+
+.users-wrap h3,
+.users-wrap .new-user {
+  display: inline-block;
+}
+
+.new-user {
+  background-color: rgba(6, 160, 6, 0.692);
+  width: 5rem;
+  height: 2rem;
+  color: white;
+  border-radius: 0.3rem;
+  border: none;
+  text-decoration: none;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.new-user:hover {
+  opacity: 0.5;
+}
+
+.msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 100px;
+  height: 100px;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+.msg.show {
+  opacity: 1;
+  display: block;
+  visibility: visible;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 1rem;
+  width: 100%;
+  table-layout: fixed;
+  height: 20vh;
+  
+}
+
+
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+
+@media (max-width: 768px) { 
+
+    body {
+      font-size: 12px;
+    }
+
+    .error-form {
+      
+      width: 18rem;
+    }
+
+    .form-login {
+        width: 100%;
+        height: 100%;
+        margin: 0 0;
+    }
+
+    input {
+        margin: 0.2rem; 
+    }
+
+    .mail, .name, .password {
+        width: 15rem;
+        height: 2.3rem;
+    }
+    
+    
+
+    .btn-login, .btn-register {
+        
+        width: 18rem;
+        height: 3rem;
+      
+    }
+
+    table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+    .mail {
+        width: 15rem;
+    }
+    
+    .password {
+        width: 15rem;
+    }
+
+    .error-form {
+      
+      width: 14rem;
+    }
+
+    .btn-login, .btn-register {
+        width: 15rem;
+    }
+
+    input {
+        margin: 0.2rem; 
+    }
+    
+  }
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
