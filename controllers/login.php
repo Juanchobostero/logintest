@@ -7,16 +7,18 @@ if(isset($_POST)){
         unset($_SESSION['error_login']);
     }
 
-
-    $email = trim($_POST['email']);
+    $mail = trim($_POST['email']);
     $password = $_POST['password'];
+    $limit = 1;
+    settype($limit, 'integer');
+    settype($mail, 'string');
+    mysqli_real_escape_string($mail);
 
-    $sql = "SELECT * FROM users 
-            WHERE email = '$email' LIMIT 1";
+    $sql = sprintf("SELECT * FROM users WHERE email = '%s' LIMIT %d", $mail, $limit);
 
     $login = mysqli_query($db, $sql);
 
-    if($login && mysqli_num_rows($login) == 1){
+    if($login && mysqli_num_rows($login) > 0){
         $user = mysqli_fetch_assoc($login);
 
         //Check password

@@ -41,11 +41,8 @@ if(isset($_POST)){
     $save_user = false;
 
     if(count($errors) == 0){
-
-        
-        //Insert user
+        //encrypt password and insert user
         $save_user = true;
-        
         $secure_password = password_hash($password, PASSWORD_BCRYPT, ['cost' => 4]);
 
         $sql = "INSERT INTO users (name, email, password)

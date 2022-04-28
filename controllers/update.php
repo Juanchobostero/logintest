@@ -3,18 +3,22 @@ require_once '../includes/connection.php';
 
 if(isset($_POST)){
 
-    //Data from form
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+
+    //Data from form and more
     $name = isset($_POST['name']) ? mysqli_real_escape_string($db, $_POST['name']) : false;
     $email = isset($_POST['email']) ? mysqli_real_escape_string($db, $_POST['email']) : false;
-    
     $errors = array();
+    $save_user = false;
 
     //Validate name
-    if(!empty($name) && !is_numeric($name) && !preg_match("/[0-9]/", $name)){
-        $validated_name = true;
+    if(!empty($name)){
+        $validate_name = true;
     }else {
-        $validated_name = false;
-        $errors['name'] = "The name only must contain letters and spaces !";
+        $validate_name = false;
+        $errors['password'] = "The name is empty !";
     }
 
     //Validate email
@@ -25,14 +29,19 @@ if(isset($_POST)){
         $errors['email'] = "The email is invalid !";
     }
 
-    $save_user = false;
+
+    //Validate name
+    if(!empty($name) && !is_numeric($name) && !preg_match("/[0-9]/", $name)){
+        $validated_name = true;
+    }else {
+        $validated_name = false;
+        $errors['name'] = "The name only must contain letters and spaces !";
+    }
 
     if(count($errors) == 0){
 
-        
         //Update user
         $save_user = true;
-        
         $user = $_SESSION['user'];
 
         $sql = "UPDATE users 
@@ -52,7 +61,7 @@ if(isset($_POST)){
         
         $_SESSION['errors'] = $errors;
         
-        header('Location: ../edit.php');
+        header('Location: ../edit.php?id='. $_GET['id']);
     }
     
 }

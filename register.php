@@ -41,7 +41,6 @@ require_once 'includes/header.php';
                 <?php echo isset($_SESSION['errors']) ? showError($_SESSION['errors'], 'password') : '' ?>
                 <small></small>
             </div>
-            <hr>
             <div class="buttons">
                 <button type="submit" class="btn-login">Submit</button>
             </div>

@@ -31,10 +31,6 @@ require_once 'helpers.php';
             <hr>
             <button onclick="logout()" class="logout">Logout</button>
         </div>
-
-        <?php else: ?>
-            <div class="info-user">
-            <h4 href="#">NO LOGIN</h4>
         <?php endif; ?>
         
     </section>

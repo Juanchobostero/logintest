@@ -1,6 +1,5 @@
 <?php 
-require_once 'includes/header.php'; 
-require_once 'includes/msg.php'; 
+include('includes/header.php'); 
 ?>
 <section class="content">
     <?php if(isset($_SESSION['user'])): ?>
@@ -44,8 +43,7 @@ require_once 'includes/msg.php';
         </div>
     <?php else: ?>
         <div class="form-login">
-            <H1>Login</H1>
-            <hr>
+            <h3>Login</h3>
             <?php if(isset($_SESSION['error_login'])): ?>
                 <div class="alert-error"><?=$_SESSION['error_login']?></div>
             <?php endif; ?>
@@ -53,15 +51,12 @@ require_once 'includes/msg.php';
                 
                 <div class="form-group">
                     <input class="mail" type="mail" id="email" name="email" placeholder="Email" autocomplete="off">
-                    
                     <small></small>
                 </div>
                 <div class="form-group">
                     <input class="password" type="password" id="password" name="password" placeholder="Password" autocomplete="off">
                     <small></small>
                 </div>
-                
-                <hr>
                 <div class="buttons">
                     <button type="submit" class="btn-login">Submit</button>
                 </div>

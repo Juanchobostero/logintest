@@ -3,7 +3,6 @@ function register(){
 }
 
 function logout(){
-    alert('Goodbye !');
     window.location.href="controllers/logout.php";
 }
 
@@ -164,11 +163,8 @@ if(form){
     
         // submit to the server if the form is valid
         if (isFormValid) {
-           alert('Welcome !');
            form.submit();
-        } else {
-            alert('There are errors in form !');
-        }
+        } 
     });
 
     form.addEventListener('input', debounce(function (e) {
@@ -217,11 +213,8 @@ if(formReg) {
     
         // submit to the server if the form is valid
         if (isFormValid) {
-           alert('Sending data .. ');
            formReg.submit();
-        } else {
-            alert('There are errors in form !');
-        }
+        } 
     });
 
     
@@ -269,11 +262,8 @@ if(formEdit) {
     
         // submit to the server if the form is valid
         if (isFormValid) {
-           alert('Sending data .. ');
            formEdit.submit();
-        } else {
-            alert('There are errors in form !');
-        }
+        } 
     });
 
     

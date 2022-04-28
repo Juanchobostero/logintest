@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-03-2021 a las 21:09:10
+-- Tiempo de generación: 28-04-2022 a las 03:10:46
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.9
 
@@ -39,10 +39,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(1, 'juancruz editado', 'juancruz@gmail.com', '$2y$04$QNq1Xvh2TLfWAIXIAXriXeaA4UjOpYutRMeYzMfLgpBMGNTacDoN2'),
 (3, 'juancho', 'juancho@gmail.com', '$2y$04$QNq1Xvh2TLfWAIXIAXriXeaA4UjOpYutRMeYzMfLgpBMGNTacDoN2'),
 (6, 'juancruz', 'nuevo@gmail.com', '$2y$04$xhswh10WXGWcAplts7cPX.hiPEAKWMMgK/brKKB6MF7vqbDSbdawe'),
-(14, 'juan cruz martinez', 'juancruzmart93@gmail.com', '$2y$04$orTsX4fTUFOhLSMIZpBgtOt3/wVUF7lr7oOtV8E/MNheYCDpULrey');
+(14, 'juan cruz martinez', 'juancruzmart93@gmail.com', '$2y$04$orTsX4fTUFOhLSMIZpBgtOt3/wVUF7lr7oOtV8E/MNheYCDpULrey'),
+(16, 'new user editedddd', 'new@gmail.com', '$2y$04$Jy4HUY.If.1oeI4Y2sAZ/evvwBCkcniU8yoIPZeAVZYAmZFZMTZJ6');
 
 --
 -- Índices para tablas volcadas
@@ -62,7 +62,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

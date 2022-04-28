@@ -34,7 +34,6 @@ $user_edit = mysqli_fetch_assoc($user);
                 <?php echo isset($_SESSION['errors']) ? showError($_SESSION['errors'], 'email') : '' ?>
                 <small></small>
             </div>
-            <hr>
             <div class="buttons">
                 <button type="submit" class="btn-login">Update</button>
             </div>

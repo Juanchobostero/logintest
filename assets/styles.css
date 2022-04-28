@@ -1,6 +1,6 @@
 /* base */
 :root {
-    --primary-color: #031929;
+    --primary-color: #033558;
     --secondary-color: #e37222;
     --extra-color: #e8e7e7;
   }
@@ -22,7 +22,7 @@
   }
   
   body {
-    font-family: 'Hind', sans-serif;
+    font-family: 'Verdana', sans-serif;
     width: 100%;
     font-size: 17px;
     min-height: 100vh;
@@ -58,17 +58,21 @@
 
   .header {
       grid-area: header;
+      color: var(--primary-color);
       display: flex;
       width: 100%;
       height: 15vh;
       background-color: var(--extra-color);
+      box-shadow: 0 6px 4px -2px gray;
       
   }
 
   .content {
     grid-area: content;
+    color: var(--primary-color);
     display: block;
-    width: 100%;
+    margin: auto;
+    width: 75%;
     height: 65vh;
     padding: 2rem 2.5rem;
     
@@ -80,6 +84,7 @@
     width: 100%;
     height: 20vh;
     background-color: var(--extra-color);
+    box-shadow: 4px 6px 4px 10px gray;
   }
 
   .title, .info-user {
@@ -93,12 +98,14 @@
   }
 
   .form-login {
-      
       min-width: 200px;
-      height: 100%;
-      background-color: var(--extra-color);
+      border-radius: 6px;
       margin: 0 2.9rem;
       padding: 1rem;
+  }
+
+  .form-login h3 {
+    text-align: center;
   }
 
   .form {
@@ -114,26 +121,17 @@
 
   
   
-  input {
-    width: 18rem;
-    height: 3rem;
+  form .mail, form .password, form .name  {
+    width: 20rem;
+    height: 2.8rem;
     background-color: #ffff;
     padding-left: 0.6rem;
     font-size: 1rem;
-    border-radius: 0.3rem;
-    border: 0.059rem solid var(--extra-color);
+    border-style: none;
+    box-shadow: 0 6px 4px -2px gray;
   }
 
-  .name {
-    width: 18rem;
-    height: 3rem;
-    background-color: #ffff;
-    padding-left: 0.6rem;
-    font-size: 1rem;
-    border-radius: 0.3rem;
-    border: 0.059rem solid var(--extra-color);
-  }
-
+  
   .error {
     color: #990000;
 }
@@ -180,8 +178,8 @@
 
 .btn-login {
     background-color: rgb(2, 63, 175);
-    width: 11rem;
-    height: 2rem;
+    width: 20rem;
+    height: 3rem;
     color: white;
     border-radius: 0.3rem;
     border: none;
@@ -380,7 +378,7 @@ table tr {
 table th,
 table td {
   padding: .625em;
-  text-align: center;
+  text-align: justify;
 }
 
 table th {
@@ -390,7 +388,11 @@ table th {
 }
 
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
+  
+    .content {
+      width: 90%;
+    }
 
     body {
       font-size: 12px;
@@ -409,6 +411,9 @@ table th {
 
     input {
         margin: 0.2rem; 
+        border-width: 5px;
+        border-style: solid;
+        border-color: var(--primary-color);
     }
 
     .mail, .name, .password {
