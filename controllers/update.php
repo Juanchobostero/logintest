@@ -43,15 +43,19 @@ if(isset($_POST)){
         //Update user
         $save_user = true;
         $user = $_SESSION['user'];
+        $id = $_GET['id'];
 
-        $sql = "UPDATE users 
-                SET name = '$name', email = '$email'
-                WHERE id =" . $_GET['id'];
+        settype($name, 'string');
+        settype($email, 'string');
+        settype($id, 'integer');
+
+        $sql = sprintf("UPDATE users 
+                SET name = '%s', email = '%s'
+                WHERE id = %d", $name, $email, $id);
 
         $save = mysqli_query($db, $sql);
 
         if($save) {
-            
             $_SESSION['done'] = "User updated !";
         } else {
             $_SESSION['errors']['general'] = "something went wrong ! ";

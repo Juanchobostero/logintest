@@ -45,8 +45,12 @@ if(isset($_POST)){
         $save_user = true;
         $secure_password = password_hash($password, PASSWORD_BCRYPT, ['cost' => 4]);
 
-        $sql = "INSERT INTO users (name, email, password)
-                VALUES('$name', '$email', '$secure_password');";
+        settype($name, 'string');
+        settype($email, 'string');
+        settype($secure_password, 'string');
+
+        $sql = sprintf("INSERT INTO users (name, email, password)
+                VALUES('%s', '%s', '%s');", $name, $email, $secure_password);
         $save = mysqli_query($db, $sql);
 
         if($save) {
